@@ -1,0 +1,6 @@
+export const primaryColor = "#ffffff"
+export const secondarycolor = "#07746E"
+export const subTextColor = "#A29E9F"
+export const tabBarBg = "#0B0B0B"
+export const tabitemBg = "#ffffff" 
+export const badgeBg = "#00FF19"
