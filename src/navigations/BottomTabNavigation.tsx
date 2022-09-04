@@ -6,7 +6,7 @@ import CartScreen from '../screens/cartScreen/CartScreen';
 import PreviousOrder from '../screens/previosOrder/PreviousOrder';
 import Favourites from '../screens/favourites/Favourites';
 import Profile from '../screens/profile';
-import { Entypo,Ionicons, AntDesign, FontAwesome5  } from '@expo/vector-icons';
+import { MaterialCommunityIcons,Ionicons, AntDesign, FontAwesome5  } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator()
@@ -24,17 +24,19 @@ const BottomTabNavigation = () => {
       tabBarActiveBackgroundColor:'#CC9366',
     }}
     >
-        <Tab.Screen name="Home" component={HomeScreen} 
-        
+        <Tab.Screen 
+          name="wlc" 
+          component={HomeScreen}         
           options={{
             headerShown:false,
             tabBarIcon: ({ color }) => (
-                <Entypo name="cup" size={24} color={color} />              
-             
+               <MaterialCommunityIcons name="cup-outline" size={24} color={color} />            
             ),
-          }}
+           }}
         />
-        <Tab.Screen name="Cart" component={CartScreen} 
+        <Tab.Screen 
+          name="Cart" 
+          component={CartScreen} 
           options={{
             // headerShown:false,
             tabBarIcon: ({ color }) => (
@@ -42,28 +44,34 @@ const BottomTabNavigation = () => {
             ),
           }}
         />
-        <Tab.Screen name="PreviousOrder" component={PreviousOrder}       
-        options={{          
-          tabBarIcon: ({ color }) => (
-            <AntDesign name="hearto" size={24} color={color} /> 
-          ),
-        }}       
-        />
-        <Tab.Screen name="Favourites" component={Favourites}                
-        options={{
-          tabBarIcon: ({ color }) => (
-            <AntDesign name="shoppingcart" size={24} color={color}/>
+        <Tab.Screen 
+          name="PreviousOrder" 
+          component={PreviousOrder}       
+          options={{          
+            tabBarIcon: ({ color }) => (
+              <AntDesign name="hearto" size={24} color={color} /> 
             ),
-            tabBarBadge: 3,
-            tabBarBadgeStyle:{backgroundColor:"#00FF19"}
-        }}       
+          }}       
         />
-        <Tab.Screen name="Profile" component={Profile} 
-        options={{
-          tabBarIcon: ({ color }) => (
-            <FontAwesome5 name="user-circle" size={24} color={color} />
-            ),
-        }}
+        <Tab.Screen 
+          name="Favourites" 
+          component={Favourites}                
+          options={{
+            tabBarIcon: ({ color }) => (
+              <AntDesign name="shoppingcart" size={24} color={color}/>
+              ),
+              tabBarBadge: 3,
+              tabBarBadgeStyle:{backgroundColor:"#00FF19"}
+          }}       
+        />
+        <Tab.Screen 
+          name="Profile" 
+          component={Profile} 
+          options={{
+            tabBarIcon: ({ color }) => (
+              <FontAwesome5 name="user-circle" size={24} color={color} />
+              ),
+          }}
         />
     </Tab.Navigator>
   )
