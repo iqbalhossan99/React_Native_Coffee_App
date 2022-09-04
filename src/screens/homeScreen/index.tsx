@@ -4,7 +4,6 @@ import RewardPickup from '../../components/rewardPickup/RewardPickup';
 import styles from './style';
 import TopMenu from '../../components/topMenu/TopMenu';
 import { ProductCategory } from '../../../assets/data/productData';
-import { useNavigation } from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
 import AppLoading from 'expo-app-loading';
 import {
@@ -19,6 +18,8 @@ import {
   Inter_800ExtraBold,
   Inter_900Black,
 } from '@expo-google-fonts/inter';
+
+import { PorductsTypes } from '../../model/productType';
 
 
 const HomeScreen = () => {
@@ -35,21 +36,16 @@ const HomeScreen = () => {
     Inter_900Black,
   });
 
-  const [getProducts, setGetProducts] = useState(0);
-  const [categoryName, setCategoryName] = useState('');
-  const navigation = useNavigation();
-  const hanldeCategory = (products, category)=>{
-    // navigation.navigate("")
+  const [getProducts, setGetProducts] = useState<PorductsTypes[]>([]);
+  const [categoryName, setCategoryName] = useState<string>('');
+  const hanldeCategory = (products, category):void=>{
     setGetProducts(products);
     setCategoryName(category);
-
-    // console.log(categoryName, '--------------------------------')
   }    
 
   const handleMenuTab = () =>{
-    setGetProducts(0);
+    setGetProducts([]);
   }
-  // console.log(getProducts,'====================================')
 
   if(!fontsLoaded){
     return <AppLoading/>;
@@ -88,16 +84,14 @@ const HomeScreen = () => {
       :
 
       <TopMenu/>
-      
-      
       }
 
         { getProducts.length > 0 ? 
 
         // Prodcut lists
           <FlatList 
-            data={ getProducts }
-              renderItem={({item})=>(
+              data={ getProducts }             
+              renderItem={ ({item}: {item: PorductsTypes})=>(
                 <TouchableOpacity  
                   style={[styles.categories]}
                 >
@@ -110,20 +104,21 @@ const HomeScreen = () => {
                   }}/>
                 </TouchableOpacity>
 
-              )}
-              // horizontal={true}
-              showsVerticalScrollIndicator={true}
+              )}              
               ItemSeparatorComponent={
-              Platform.OS == 'android' &&
-                (({ highlighted }) => (
-                  <View
-                    style={[
-                      styles.separator,
-                      highlighted && { marginLeft: 0 }
-                    ]}
-                  />
-              ))
-              }
+                Platform.OS == 'android' &&
+                  (({ highlighted }) => (
+                    <View
+                      style={[
+                        styles.separator,
+                        highlighted && { marginLeft: 0 }
+                      ]}
+                    />
+                ))
+                }
+                keyExtractor={item => item.id}
+              // horizontal={true}
+              showsVerticalScrollIndicator={true}             
           /> 
           
           : 
@@ -145,19 +140,20 @@ const HomeScreen = () => {
               </TouchableOpacity>
 
             )}
-            // horizontal={true}
-            showsVerticalScrollIndicator={true}
             ItemSeparatorComponent={
-            Platform.OS == 'android' &&
+              Platform.OS == 'android' &&
               (({ highlighted }) => (
                 <View
-                  style={[
-                    styles.separator,
-                    highlighted && { marginLeft: 0 }
-                  ]}
+                style={[
+                  styles.separator,
+                  highlighted && { marginLeft: 0 }
+                ]}
                 />
-            ))
-            }
+                ))
+              }
+              keyExtractor={item => item.id}
+              // horizontal={true}
+              showsVerticalScrollIndicator={true}
           />  
       }
         {/* End The Flatlist */}

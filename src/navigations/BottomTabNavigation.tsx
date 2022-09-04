@@ -17,7 +17,7 @@ const BottomTabNavigation = () => {
     screenOptions={{
       tabBarStyle: { backgroundColor:"#0B0B0B",  height:80, width:'100%', borderTopLeftRadius:30, borderTopRightRadius:30, marginTop:-30, paddingLeft:44, paddingRight:44, paddingTop:13,  }, //#0B0B0B
 
-      tabBarItemStyle:{   width:50, height:50,  borderRadius:25,  alignItems:"center",},
+      tabBarItemStyle:{    height:55,  borderRadius:27.5,  alignItems:"center",},
       tabBarShowLabel:false,            
       tabBarInactiveTintColor:'#fff' ,
       tabBarActiveTintColor:'#161616',

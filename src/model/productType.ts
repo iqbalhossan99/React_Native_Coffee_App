@@ -2,10 +2,10 @@ export interface ProductCategoriesTypes {
     id:       string;
     category: string;
     img:      string;
-    porducts: Porducts[];
+    porducts: PorductsTypes[];
 }
 
-export interface Porducts {
+export interface PorductsTypes {
     id:       string;
     title:    string;
     subTitle: string;
