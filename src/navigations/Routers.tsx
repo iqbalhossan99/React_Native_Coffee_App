@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 // import MaterialBottomTabNavigation from './MaterialBottomTabNavigation'
 import BottomTabNavigation from './BottomTabNavigation'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import ProductDetaiulsScreen from '../screens/productDetaiulsScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -16,6 +17,12 @@ const Routers = () => {
           component={BottomTabNavigation}
           options={{
             headerShown:false
+          }}          
+        />
+        <Stack.Screen 
+          name='Details' 
+          component={ProductDetaiulsScreen}
+          options={{
           }}          
         />
       </Stack.Navigator>

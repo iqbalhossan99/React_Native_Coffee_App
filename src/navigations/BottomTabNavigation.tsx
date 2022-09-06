@@ -35,8 +35,8 @@ const BottomTabNavigation = () => {
            }}
         />
         <Tab.Screen 
-          name="Cart" 
-          component={CartScreen} 
+          name="PreviousOrder" 
+          component={PreviousOrder} 
           options={{
             // headerShown:false,
             tabBarIcon: ({ color }) => (
@@ -45,8 +45,8 @@ const BottomTabNavigation = () => {
           }}
         />
         <Tab.Screen 
-          name="PreviousOrder" 
-          component={PreviousOrder}       
+          name=" Favourites" 
+          component={ Favourites}       
           options={{          
             tabBarIcon: ({ color }) => (
               <AntDesign name="hearto" size={24} color={color} /> 
@@ -54,8 +54,8 @@ const BottomTabNavigation = () => {
           }}       
         />
         <Tab.Screen 
-          name="Favourites" 
-          component={Favourites}                
+          name=" Cart" 
+          component={CartScreen}                
           options={{
             tabBarIcon: ({ color }) => (
               <AntDesign name="shoppingcart" size={24} color={color}/>
