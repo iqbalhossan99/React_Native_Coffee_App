@@ -1,18 +1,18 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
-import styles from './style'
+import style from './style'
 
 const CategoryList = ({category,hanldeCategory}) => {
   return (
     <TouchableOpacity  
-    style={styles.categories}
+    style={style.categories}
     onPress={()=>{ hanldeCategory(category.porducts, category.category)}}
   >
-    <Image style={styles.categoryImg} source={{
+    <Image style={style.categoryImg} source={{
           uri: category.img,
     }}/>
         <View style={{marginLeft:30}}>
-          <Text style={styles.categoryTitle}>{category.category}</Text>
+          <Text style={style.categoryTitle}>{category.category}</Text>
         </View>
   </TouchableOpacity>
   )

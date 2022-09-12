@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
-import styles from './style';
+import style from './style';
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -15,12 +15,12 @@ const ProductList = ({product,
  }
  
  return (
-    <TouchableOpacity onPress={()=>handleNavigateProduct(product)} style={[styles.categories]}>
+    <TouchableOpacity onPress={()=>handleNavigateProduct(product)} style={[style.categories]}>
       <View style={{flex:1}}>
-        <Text style={styles.categoryTitle}>{product.title}</Text>
-        <Text style={styles.subTitle}>{product.subTitle}</Text>
+        <Text style={style.categoryTitle}>{product.title}</Text>
+        <Text style={style.subTitle}>{product.subTitle}</Text>
       </View>
-      <Image style={styles.categoryImg } source={{
+      <Image style={style.categoryImg } source={{
             uri: product.img,
       }}/>
     </TouchableOpacity>

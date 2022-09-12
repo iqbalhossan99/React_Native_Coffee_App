@@ -8,6 +8,8 @@ import Favourites from '../screens/favourites/Favourites';
 import Profile from '../screens/profile';
 import { MaterialCommunityIcons,Ionicons, AntDesign, FontAwesome5  } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import ExploreNavigator from './ExploreNavigation';
+import ProductDetaiulsScreen from '../screens/productDetaiulsScreen';
 
 const Tab = createBottomTabNavigator()
 
@@ -23,17 +25,18 @@ const BottomTabNavigation = () => {
       tabBarActiveTintColor:'#161616',
       tabBarActiveBackgroundColor:'#CC9366',
     }}
+    
     >
         <Tab.Screen 
-          name="wlc" 
-          component={HomeScreen}         
+          name="Explore" 
+          component={ExploreNavigator}         
           options={{
             headerShown:false,
             tabBarIcon: ({ color }) => (
                <MaterialCommunityIcons name="cup-outline" size={24} color={color} />            
             ),
            }}
-        />
+        />    
         <Tab.Screen 
           name="PreviousOrder" 
           component={PreviousOrder} 
@@ -55,14 +58,17 @@ const BottomTabNavigation = () => {
         />
         <Tab.Screen 
           name=" Cart" 
-          component={CartScreen}                
+          component={CartScreen}     
           options={{
+            headerShown:false,
             tabBarIcon: ({ color }) => (
               <AntDesign name="shoppingcart" size={24} color={color}/>
               ),
               tabBarBadge: 3,
               tabBarBadgeStyle:{backgroundColor:"#00FF19"}
-          }}       
+
+              
+          }}               
         />
         <Tab.Screen 
           name="Profile" 

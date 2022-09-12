@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
     categoryContainer:{
         paddingHorizontal:30, 
         paddingVertical:30, 
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default styles
+export default style

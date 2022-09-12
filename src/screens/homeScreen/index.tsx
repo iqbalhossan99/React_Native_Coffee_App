@@ -1,7 +1,7 @@
 import { View, Text, Image, FlatList, TouchableOpacity, SafeAreaView } from 'react-native';
 import React, { useState } from 'react';
 import RewardPickup from '../../components/rewardPickup/RewardPickup';
-import styles from './style';
+import style from './style';
 
 import { ProductCategory } from '../../../assets/data/productData';
 import { AntDesign } from '@expo/vector-icons';
@@ -70,7 +70,7 @@ const HomeScreen = () => {
       </View>
 
       {/* Category and Product List */}
-      <View style={styles.categoryContainer}>
+      <View style={style.categoryContainer}>
       { 
         // {/* Top Menu */}
 
@@ -105,7 +105,7 @@ const HomeScreen = () => {
                   (({ highlighted }) => (
                     <View
                       style={[
-                        styles.separator,
+                        style.separator,
                         highlighted && { marginLeft: 0 }
                       ]}
                     />
@@ -126,7 +126,7 @@ const HomeScreen = () => {
               (({ highlighted }) => (
                 <View
                 style={[
-                  styles.separator,
+                  style.separator,
                   highlighted && { marginLeft: 0 }
                 ]}
                 />

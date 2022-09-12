@@ -23,6 +23,14 @@ const Routers = () => {
           name='Details' 
           component={ProductDetaiulsScreen}
           options={{
+            headerStyle:{
+              backgroundColor:"#07746E",
+              
+            },
+            headerShadowVisible:false,
+            headerTintColor:"#fff",
+            headerTitle:""
+
           }}          
         />
       </Stack.Navigator>
