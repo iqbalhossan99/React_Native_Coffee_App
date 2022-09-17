@@ -1,22 +1,23 @@
-import { View, Text, TouchableOpacity } from 'react-native'
-import React from 'react'
-import { AntDesign } from '@expo/vector-icons'
+import { View, Text, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { AntDesign } from '@expo/vector-icons';
+import style from './style';
 
 const TopSubMenu = (
-    // {handleMenuTab, categoryName}
+    {handleMenuTab, categoryName}
     ) => {
   return (
-    <View style={{ flexDirection:"row", justifyContent:"space-between",  marginBottom:35}}>
-          <View  style={{flexDirection:"row", alignItems:"center"}}>
+    <View style={style.topSubMenuContainer}>
+          <View  style={style.menu}>
             <TouchableOpacity 
-            // onPress={handleMenuTab}
+            onPress={handleMenuTab}
             >
-              <Text style={{color:"#fff", fontFamily:"Inter_400Regular", fontSize:16, lineHeight:22}}>Menu</Text>
+              <Text style={style.menuText}>Menu</Text>
             </TouchableOpacity>
             <AntDesign style={{marginLeft:15, marginRight:10}} name="right" size={16} color="#fff" />
-            <Text style={{color:"#fff", fontFamily:"Inter_400Regular", fontSize:16, lineHeight:22}}>
-                {/* {categoryName} */}
-                </Text>             
+            <Text style={style.categoryName}>
+                {categoryName}                
+            </Text>             
           </View>
           <TouchableOpacity  activeOpacity={.5}>
               <AntDesign name="search1" size={24} color="#fff" />     
@@ -25,4 +26,4 @@ const TopSubMenu = (
   )
 }
 
-export default TopSubMenu
+export default TopSubMenu;

@@ -224,7 +224,7 @@ export const ProductCategory: ProductCategoriesTypes[]  =
   },
   {
     id: "9",
-    category: "Honey lime combo",
+    category: "Honey lime ",
     img: "https://img.freepik.com/premium-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?w=2000",
     porducts: [
       {

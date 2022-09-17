@@ -1,12 +1,8 @@
 import { View, Text, FlatList, TouchableOpacity, Image, Platform, ScrollView, SafeAreaView } from 'react-native';
 import React from 'react';
-import { AntDesign, Entypo, Ionicons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import style from './style';
-import CategoryList from '../../components/categoryList/CategoryList';
-import Quantity from '../../components/quantity/Quantity';
-
 import Button from '../../components/button/Button';
-import Line from '../../components/line/Line';
 import CheckoutBtn from '../../components/checkoutBtn/CheckoutBtn';
 import OrderList from '../../components/orderList/OrderList';
 
@@ -63,12 +59,13 @@ const CartScreen = () => {
     ]
   return (
     <SafeAreaView>
+      {/* Banner */}
       <View style={style.banner}>
           <View >
             <Text style={style.pickupText}>Pickup at</Text>
             <Text style={style.pageTitle}>Your Cart</Text>
           </View>
-
+          {/* Banner Right */}
           <View style={style.bannerRight}>
             <View>
               <Text style={style.locationText}>Ramona - 680 
@@ -81,31 +78,37 @@ const CartScreen = () => {
           </View>
       </View> 
       {/* Banner End */}      
-      <ScrollView>
       <View style={style.mainSection}>
-        {/* Order list */}
-        <FlatList 
-          data={orderList}
-          renderItem={({item}) =>(            
-            <OrderList item={item}/>
-          )}
-          ItemSeparatorComponent={
-            Platform.OS == 'android' &&
-            (({ highlighted }) => (
-              <View
-              style={[
-                style.separator,
-                highlighted && { marginLeft: 0 }
-              ]}
-              />
-              ))
-            }
-        />
-        {/* Add more btn */}
-        <Button text={"Add more items"} btnStyle={style.addMoreBtn} textStyle={style.btnText}/>
-        
+        <TouchableOpacity>
+         <Text style={style.clearCartText}>Clear cart</Text>
+        </TouchableOpacity>
+        <ScrollView>
+          <View style={{
+            paddingBottom:600
+          }}>
+            {/* Order list */}
+            <FlatList 
+              data={orderList}
+              renderItem={({item}) =>(            
+                <OrderList item={item}/>
+              )}
+              ItemSeparatorComponent={
+                Platform.OS == 'android' &&
+                (({ highlighted }) => (
+                  <View
+                  style={[
+                    style.separator,
+                    highlighted && { marginLeft: 0 }
+                  ]}
+                  />
+                  ))
+                }
+            />
+            {/* Add more btn */}
+            <Button text={"Add more items"} btnStyle={style.addMoreBtn} textStyle={style.btnText}/>             
+          </View>
+        </ScrollView>
       </View>      
-      </ScrollView>
       {/* Checkout btn */}
       <CheckoutBtn/>       
     </SafeAreaView>

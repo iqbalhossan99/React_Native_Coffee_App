@@ -3,7 +3,8 @@ import {  StyleSheet } from "react-native";
 const style = StyleSheet.create({
     categoryContainer:{
         paddingHorizontal:30, 
-        paddingVertical:30, 
+        paddingTop:30,
+        paddingBottom:300, 
         backgroundColor:"#161616", 
         borderTopLeftRadius:30, 
         borderTopRightRadius:30,

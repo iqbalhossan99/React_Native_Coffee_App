@@ -3,7 +3,10 @@ import React from 'react'
 
 const Favourites = () => {
   return (
-    <View>
+    <View style={{
+      backgroundColor:"red",
+      height:"100%"
+    }}>
       <Text>Favourites</Text>
     </View>
   )

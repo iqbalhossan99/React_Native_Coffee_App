@@ -11,7 +11,7 @@ const style = StyleSheet.create({
         alignItems:"center", 
         position:"absolute",
         zIndex:9,
-        bottom:180,
+        bottom:260,
         width:"90%",
         marginHorizontal:20
 

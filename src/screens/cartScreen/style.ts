@@ -5,7 +5,7 @@ const style = StyleSheet.create({
         backgroundColor:"#07746E",
         paddingHorizontal:30,
         paddingTop:50,
-        paddingBottom:20,
+        paddingBottom:50,
         flexDirection:"row",
         justifyContent:"space-between",
     },
@@ -40,14 +40,21 @@ const style = StyleSheet.create({
         lineHeight:16
 
     },
-
     // Main Section
     mainSection:{
         backgroundColor:"#161616",
         paddingHorizontal:30,
         paddingTop:20,
-        paddingBottom:300
-        // minHeight:700
+        // paddingBottom:400,
+        borderRadius:30,
+        marginTop:-30
+    },
+    clearCartText:{
+        fontFamily:"Inter_500Medium",
+        fontSize:16,
+        color:"#FF8400",
+        marginBottom:30,
+        alignSelf:"flex-end"
     },
     separator:{
         marginVertical:15,
@@ -63,6 +70,7 @@ const style = StyleSheet.create({
         alignItems:"center",
         borderRadius:30,
         marginVertical:50,
+        // marginBottom:100,
         width:"80%",
         alignSelf:"center"    
     },
@@ -72,8 +80,6 @@ const style = StyleSheet.create({
         lineHeight:19,
         color:"#fff",
     },
-
-    
 
 })
 
