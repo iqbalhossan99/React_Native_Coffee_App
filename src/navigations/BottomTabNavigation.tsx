@@ -10,6 +10,7 @@ import { MaterialCommunityIcons,Ionicons, AntDesign, FontAwesome5  } from '@expo
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ExploreNavigator from './ExploreNavigation';
 import ProductDetaiulsScreen from '../screens/productDetaiulsScreen';
+import SignInScreen from '../screens/signInScreen';
 
 const Tab = createBottomTabNavigator()
 
@@ -68,13 +69,19 @@ const BottomTabNavigation = () => {
         }}               
       />
       <Tab.Screen 
-        name="Profile" 
-        component={Profile} 
+        name="Sing in" 
+        component={SignInScreen} 
         options={{
           tabBarIcon: ({ color }) => (
             <FontAwesome5 name="user-circle" size={24} color={color} />
             ),
-        }}
+          headerStyle:{
+            backgroundColor:"#07746E",          
+            
+          },
+          headerShadowVisible:false,
+          headerTintColor:"#fff",            
+        }}    
       />
     </Tab.Navigator>
   )

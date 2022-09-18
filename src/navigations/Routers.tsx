@@ -8,13 +8,16 @@ import ProductDetaiulsScreen from '../screens/productDetaiulsScreen'
 import MapScreen from '../screens/mapScreen'
 import ChooseLocation from '../screens/chooseLocation'
 import SignInScreen from '../screens/signInScreen'
+import SignUpScreen from '../screens/signUpScreen'
 
 const Stack = createNativeStackNavigator()
 
 const Routers = () => {
   return (
    <NavigationContainer>
-      <Stack.Navigator  initialRouteName='SignIn'>
+      <Stack.Navigator  
+      // initialRouteName='SignIn'
+      >
         <Stack.Screen 
           name='Home' 
           component={BottomTabNavigation}
@@ -75,6 +78,18 @@ const Routers = () => {
         <Stack.Screen 
           name='SignIn' 
           component={SignInScreen}
+          options={{
+            headerStyle:{
+              backgroundColor:"#07746E",          
+              
+            },
+            headerShadowVisible:false,
+            headerTintColor:"#fff",            
+          }}          
+        />
+        <Stack.Screen 
+          name='SignUp' 
+          component={SignUpScreen}
           options={{
             headerStyle:{
               backgroundColor:"#07746E",          

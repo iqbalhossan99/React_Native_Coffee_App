@@ -26,19 +26,11 @@ const style = StyleSheet.create({
         color:'#ffffff',
         textAlign:"center"
     },
-    forgotText:{
-        fontFamily:"Inter_600SemiBold",
-        fontSize:16,
-        lineHeight:22,
-        color:"#ffffff",
-        textAlign:"center",
-        marginTop:30
-    },
+   
     bottomSection:{
         backgroundColor:"#000000",
         flexDirection:"row",
         alignItems:"center",
-        justifyContent:"space-between",
         paddingVertical:30,
         paddingHorizontal:30,
         borderTopLeftRadius:30,
