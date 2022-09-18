@@ -1,13 +1,16 @@
 import { View, Text, TextInput } from 'react-native';
 import React from 'react';
+import style from './style';
 
-const InpuText = () => {
+const InpuText = (
+  {placeholder}
+  ) => {
   return (
-    <View>
-      <TextInput >
-
-      </TextInput>
-    </View>
+    <TextInput style={style.inputField} 
+      placeholder={placeholder
+      }
+          
+    />   
   )
 }
 

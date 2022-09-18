@@ -1,4 +1,4 @@
-export const primaryColor = "#ffffff"
+export const primaryColor = "#FF8400"
 export const secondarycolor = "#07746E"
 export const subTextColor = "#A29E9F"
 export const tabBarBg = "#0B0B0B"
